@@ -6,16 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import dagger.android.AndroidInjection
+import dagger.android.HasAndroidInjector
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class MyFragment : Fragment() {
+class MyFragment : DaggerFragment() {
 
     @Inject
     lateinit var colorsGenerator: ColorsGenerator
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -27,7 +31,7 @@ class MyFragment : Fragment() {
         val btnGenerate: Button = view.findViewById(R.id.btnGenerate)
         val myView: View = view.findViewById(R.id.myView)
 
-        MyApplication.appComponent.injectsMainActivity(this)
+       // MyApplication.appComponent.injectsMainActivity(this)
 
 
         btnGenerate.setOnClickListener {
@@ -38,5 +42,6 @@ class MyFragment : Fragment() {
 
         return view
     }
+
 
 }

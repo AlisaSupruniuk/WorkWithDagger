@@ -1,14 +1,17 @@
 package by.alisa.supruniuk.workwithdagger.dagger
 
+import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module
-class ContextModule(val context: Context) {
+class ContextModule() {
 
     @Provides
-    fun provideContext(): Context{
-        return context
+    @Singleton
+    fun provideContext(application: Application): Context{
+        return application.applicationContext
     }
 }

@@ -1,10 +1,32 @@
 package by.alisa.supruniuk.workwithdagger.dagger
 
-import by.alisa.supruniuk.workwithdagger.MyFragment
+import android.app.Application
+import android.content.Context
+import by.alisa.supruniuk.workwithdagger.MyApplication
+import dagger.BindsInstance
 import dagger.Component
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
-@Component(modules = [ColorGenerateModule::class, ContextModule::class])
+@Singleton
+@Component(
+    modules = [
+        AndroidSupportInjectionModule::class,
+        MainActivityBindingModule::class,
+        ColorGenerateModule::class,
+        ContextModule::class
+    ]
+)
 interface AppComponent {
-    fun injectsMainActivity(myFragment: MyFragment) {
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(app: Application): Builder?
+        fun build(): AppComponent?
     }
+
+    fun inject(app: MyApplication)
+
 }

@@ -4,18 +4,31 @@ import android.app.Application
 import by.alisa.supruniuk.workwithdagger.dagger.AppComponent
 import by.alisa.supruniuk.workwithdagger.dagger.ContextModule
 import by.alisa.supruniuk.workwithdagger.dagger.DaggerAppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class MyApplication: Application() {
+class MyApplication: Application(), HasAndroidInjector {
 
-    companion object {
-        lateinit var appComponent: AppComponent
-    }
+    @Inject
+    lateinit var androidInjector: DispatchingAndroidInjector<Any>
+
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder()
-                .contextModule(ContextModule(applicationContext))
-                .build()
+        buildComponent()
     }
+
+
+    fun buildComponent(){
+        DaggerAppComponent.builder()
+            .application(this)?.build()?.inject(this)
+    }
+
+    override fun androidInjector(): AndroidInjector<Any> {
+        return androidInjector
+    }
+
 }
 

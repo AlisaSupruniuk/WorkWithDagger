@@ -22,6 +22,7 @@ class MyApplication: Application(), HasAndroidInjector {
 
 
     fun buildComponent(){
+
         DaggerAppComponent.builder()
             .application(this)?.build()?.inject(this)
     }

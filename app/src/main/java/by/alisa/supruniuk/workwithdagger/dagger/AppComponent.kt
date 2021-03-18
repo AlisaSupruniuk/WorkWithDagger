@@ -1,11 +1,9 @@
 package by.alisa.supruniuk.workwithdagger.dagger
 
 import android.app.Application
-import android.content.Context
 import by.alisa.supruniuk.workwithdagger.MyApplication
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
@@ -15,7 +13,8 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         MainActivityBindingModule::class,
         ColorGenerateModule::class,
-        ContextModule::class
+        ContextModule::class,
+        ViewModelModule::class
     ]
 )
 interface AppComponent {

@@ -1,7 +1,6 @@
 package by.alisa.supruniuk.workwithdagger.dagger
 
 import android.app.Application
-import by.alisa.supruniuk.workwithdagger.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -20,7 +19,6 @@ class MyApplication: Application(), HasAndroidInjector {
 
 
     fun buildComponent(){
-
         DaggerAppComponent.builder()
             .application(this)?.build()?.inject(this)
     }

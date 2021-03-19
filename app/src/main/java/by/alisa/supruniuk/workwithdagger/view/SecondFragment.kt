@@ -40,6 +40,7 @@ class SecondFragment : DaggerFragment() {
         val myView: View = view.findViewById(R.id.myView)
         val btnHeavyDate: Button = view.findViewById(R.id.btnHeavyData)
         val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
+        tvHeavyData.text = model.getHeavyDate().toString()
 
         btnGenerate.setOnClickListener {
             val randomNum : Int = (1..5).shuffled().first()

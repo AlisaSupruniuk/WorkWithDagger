@@ -1,8 +1,6 @@
-package by.alisa.supruniuk.workwithdagger
+package by.alisa.supruniuk.workwithdagger.dagger
 
 import android.app.Application
-import by.alisa.supruniuk.workwithdagger.dagger.AppComponent
-import by.alisa.supruniuk.workwithdagger.dagger.ContextModule
 import by.alisa.supruniuk.workwithdagger.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

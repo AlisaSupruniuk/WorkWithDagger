@@ -5,11 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
     <fragment
         android:id="@+id/myFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="by.alisa.supruniuk.workwithdagger.MyFragment"/>
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:name="by.alisa.supruniuk.workwithdagger.view.MyFragment"/>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:name="by.alisa.supruniuk.workwithdagger.view.SecondFragment"/>
 
 </LinearLayout>

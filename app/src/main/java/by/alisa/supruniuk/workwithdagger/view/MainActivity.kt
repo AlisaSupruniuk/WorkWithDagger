@@ -1,9 +1,8 @@
-package by.alisa.supruniuk.workwithdagger
+package by.alisa.supruniuk.workwithdagger.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import dagger.android.AndroidInjection
-import dagger.android.DaggerActivity
+import by.alisa.supruniuk.workwithdagger.R
 
 class MainActivity : AppCompatActivity() {
 

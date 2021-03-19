@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.dagger
+package by.alisa.supruniuk.workwithdagger.dagger.modules
 
 import android.app.Application
 import android.content.Context

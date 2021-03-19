@@ -5,26 +5,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyFragment"
+    tools:context=".view.MyFragment"
     android:orientation="vertical">
 
 
     <View
         android:id="@+id/myView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:background="@color/black" />
 
-    <Button
-        android:id="@+id/btnGenerate"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Generate"
-        android:textColor="#191515"
-        app:backgroundTint="#83B2B8" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnGenerate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Generate"
+            android:textColor="#191515"
+            app:backgroundTint="#83B2B8" />
+
+        <Button
+            android:id="@+id/btnHeavyData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Data"
+            android:textColor="#191515"
+            app:backgroundTint="#83B2B8" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvHeavyData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"/>
+
 
 </LinearLayout>

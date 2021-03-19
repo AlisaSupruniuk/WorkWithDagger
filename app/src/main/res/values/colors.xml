@@ -11,4 +11,8 @@
     <color name="yellow">#FBDD17</color>
     <color name="red">#ED0A25</color>
     <color name="black">#FF000000</color>
+    <color name="purple">#7F1291</color>
+    <color name="orange">#DC7C15</color>
+    <color name="brown">#4E3105</color>
+    <color name="gray">#7E7A7A</color>
 </resources>

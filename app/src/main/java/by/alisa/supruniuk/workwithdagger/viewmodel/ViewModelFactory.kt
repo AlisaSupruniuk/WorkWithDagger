@@ -17,24 +17,26 @@ class ViewModelFactory @Inject constructor(
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         var creator: Provider<out ViewModel>? = creators[modelClass]
 
-        if (creator == null) {
-            for ((key, value ) in creators) {
-                if (modelClass.isAssignableFrom(key)) {
-                    creator = value
-                    break
-                }
-            }
-        }
+        return creator?.get() as T
 
-        if (creator == null) {
-            throw IllegalAccessException("unknown model class " + modelClass)
-        }
-
-        try {
-            return creator.get() as T
-        } catch (e: Exception){
-            throw RuntimeException(e)
-        }
+//        if (creator == null) {
+//            for ((key, value ) in creators) {
+//                if (modelClass.isAssignableFrom(key)) {
+//                    creator = value
+//                    break
+//                }
+//            }
+//        }
+//
+//        if (creator == null) {
+//            throw IllegalAccessException("unknown model class " + modelClass)
+//        }
+//
+//        try {
+//            return creator.get() as T
+//        } catch (e: Exception){
+//            throw RuntimeException(e)
+//        }
     }
 
 

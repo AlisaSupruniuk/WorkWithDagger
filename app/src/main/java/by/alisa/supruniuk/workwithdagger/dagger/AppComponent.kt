@@ -3,7 +3,6 @@ package by.alisa.supruniuk.workwithdagger.dagger
 import android.app.Application
 import by.alisa.supruniuk.workwithdagger.dagger.modules.ContextModule
 import by.alisa.supruniuk.workwithdagger.dagger.modules.MyFragmentBindingModule
-import by.alisa.supruniuk.workwithdagger.dagger.modules.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -14,8 +13,7 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         MyFragmentBindingModule::class,
-        ContextModule::class,
-        ViewModelModule::class
+        ContextModule::class
     ]
 )
 interface AppComponent {

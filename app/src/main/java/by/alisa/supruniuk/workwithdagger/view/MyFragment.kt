@@ -12,6 +12,8 @@ import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class MyFragment : DaggerFragment() {
 
@@ -40,8 +42,10 @@ class MyFragment : DaggerFragment() {
         val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
 
         btnGenerate.setOnClickListener {
-            model.getColor().subscribe(){
-                onNext -> myView.setBackgroundColor(onNext)}
+            model.getColor().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(){
+                        onNext -> myView.setBackgroundColor(onNext)}
         }
 
         btnHeavyDate.setOnClickListener {

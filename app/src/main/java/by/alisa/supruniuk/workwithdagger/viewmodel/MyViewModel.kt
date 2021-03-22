@@ -21,8 +21,7 @@ class MyViewModel @Inject constructor ( private val colorsGenerator: ColorsGener
         val observable: Observable<Int> = Observable.create{
             it.onNext((1..5).shuffled().first())
         }
-            return observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).map{
+            return observable.map{
             colorsGenerator.changeColor(it)
         }
     }

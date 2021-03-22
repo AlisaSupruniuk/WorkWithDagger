@@ -11,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.viewmodel.SecondViewModel
 import dagger.android.support.DaggerFragment
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
@@ -45,7 +47,9 @@ class SecondFragment : DaggerFragment() {
 
 
         btnGenerate.setOnClickListener {
-            model.getColor().subscribe(){
+            model.getColor().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(){
                     onNext -> myView.setBackgroundColor(onNext)}
         }
 

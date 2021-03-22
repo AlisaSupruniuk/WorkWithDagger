@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.viewmodel.SecondViewModel
 import dagger.android.support.DaggerFragment
@@ -32,7 +31,7 @@ class SecondFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        model = ViewModelProviders.of(this, modelFactory).get(SecondViewModel::class.java)
+        model = ViewModelProvider(this, modelFactory).get(SecondViewModel::class.java)
 
         val view : View = inflater.inflate(R.layout.fragment_my, container, false)
 
@@ -43,10 +42,8 @@ class SecondFragment : DaggerFragment() {
         tvHeavyData.text = model.getHeavyDate().toString()
 
         btnGenerate.setOnClickListener {
-            val randomNum : Int = (1..5).shuffled().first()
-
-            myView.setBackgroundColor(model.getColor(randomNum))
-            btnGenerate.text = randomNum.toString()
+            model.getColor().subscribe(){
+                    onNext -> myView.setBackgroundColor(onNext)}
         }
 
         btnHeavyDate.setOnClickListener {

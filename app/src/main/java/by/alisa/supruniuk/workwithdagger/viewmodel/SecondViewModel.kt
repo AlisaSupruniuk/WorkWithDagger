@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import by.alisa.supruniuk.workwithdagger.data.ColorsGeneratorInterface
 import by.alisa.supruniuk.workwithdagger.data.HeavyData
 import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import javax.inject.Provider
 
@@ -11,11 +13,12 @@ class SecondViewModel @Inject constructor(private val colorsGenerator: ColorsGen
 
     fun getColor(): Observable<Int> {
 
-        var observable: Observable<Int> = Observable.create{
+        val observable: Observable<Int> = Observable.create{
             it.onNext((1..5).shuffled().first())
         }
-        return observable.map{
-            colorsGenerator.changeColor(it)
+        return observable.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread()).map{
+                colorsGenerator.changeColor(it)
         }
     }
 

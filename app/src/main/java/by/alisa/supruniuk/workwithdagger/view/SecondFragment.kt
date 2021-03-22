@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.viewmodel.SecondViewModel
@@ -40,6 +41,8 @@ class SecondFragment : DaggerFragment() {
         val btnHeavyDate: Button = view.findViewById(R.id.btnHeavyData)
         val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
         tvHeavyData.text = model.getHeavyDate().toString()
+
+
 
         btnGenerate.setOnClickListener {
             model.getColor().subscribe(){

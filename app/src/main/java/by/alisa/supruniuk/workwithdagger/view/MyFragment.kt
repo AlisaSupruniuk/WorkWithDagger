@@ -43,7 +43,7 @@ class MyFragment : DaggerFragment() {
         btnGenerate.setOnClickListener {
             model.getObject().subscribe(){
                         onNext -> myView.setBackgroundColor(onNext.colorNum)
-                        tvNameColor.text = onNext.colorName}
+                        tvNameColor.text = onNext.colorName }
         }
 
         btnHeavyDate.setOnClickListener {

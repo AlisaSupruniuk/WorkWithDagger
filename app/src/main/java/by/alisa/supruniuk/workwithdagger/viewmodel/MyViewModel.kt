@@ -16,16 +16,14 @@ class MyViewModel @Inject constructor (private val colorsGenerator: ColorsGenera
                                        private val nameGenerator: NameGenerator): ViewModel() {
 
     private val observable: Observable<Int> = Observable.create {
-        it.onNext((1..5).shuffled().first())}
+        it.onNext((1..5).shuffled().first()) }
 
     fun getObject(): Observable<SomeObject> {
         return observable.filter{x -> x != 4}
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .map { colorsGenerator.changeColor(it)}
-            .map { nameGenerator.getNameColor(it) }
-            .map { num -> SomeObject(colorsGenerator.changeColor(num.toInt()),
-                nameGenerator.getNameColor(num.toInt()))}
+            .map { num -> SomeObject(colorsGenerator.changeColor(num),
+                nameGenerator.getNameColor(num))}
             .observeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
 

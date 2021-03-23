@@ -12,8 +12,6 @@ import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class MyFragment : DaggerFragment() {
 

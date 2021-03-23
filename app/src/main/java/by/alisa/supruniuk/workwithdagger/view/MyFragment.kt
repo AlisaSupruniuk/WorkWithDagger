@@ -40,12 +40,12 @@ class MyFragment : DaggerFragment() {
         val myView: View = view.findViewById(R.id.myView)
         val btnHeavyDate by lazy {view.findViewById<Button>(R.id.btnHeavyData)}
         val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
+        val tvNameColor: TextView = view.findViewById(R.id.tvNameColor)
 
         btnGenerate.setOnClickListener {
-            model.getColor().subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(){
-                        onNext -> myView.setBackgroundColor(onNext)}
+            model.getObject().subscribe(){
+                        onNext -> myView.setBackgroundColor(onNext.colorNum)
+                        tvNameColor.text = onNext.colorName}
         }
 
         btnHeavyDate.setOnClickListener {

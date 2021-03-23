@@ -3,7 +3,6 @@ package by.alisa.supruniuk.workwithdagger.dagger.modules
 import androidx.lifecycle.ViewModel
 import by.alisa.supruniuk.workwithdagger.data.ColorsGeneratorInterface
 import by.alisa.supruniuk.workwithdagger.data.ColorsGeneratorOne
-import by.alisa.supruniuk.workwithdagger.view.MyFragment
 import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import by.alisa.supruniuk.workwithdagger.viewmodel.ViewModelKey
 import dagger.Binds

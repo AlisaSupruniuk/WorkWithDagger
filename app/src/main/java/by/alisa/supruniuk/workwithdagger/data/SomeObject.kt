@@ -1,5 +1,4 @@
 package by.alisa.supruniuk.workwithdagger.data
 
-class SomeObject (val colorName: String, val colorNum: Int) {
-
-}
+data class SomeObject constructor ( val colorNum: Int,
+                                       val colorName: String)

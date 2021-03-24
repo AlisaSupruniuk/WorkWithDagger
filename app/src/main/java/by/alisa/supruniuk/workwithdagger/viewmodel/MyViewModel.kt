@@ -9,7 +9,7 @@ import by.alisa.supruniuk.workwithdagger.data.SomeObject
 import dagger.Lazy
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import java.util.logging.ErrorManager
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 
@@ -20,8 +20,10 @@ class MyViewModel @Inject constructor (private val colorsGenerator: ColorsGenera
         it.onNext((1..5).shuffled().first()) }
 
     fun getObject(): Observable<SomeObject> {
-        return observable.filter{x -> x != 4}
+        return observable.filter{ x -> x != 4}
+            .retry(3)
             .subscribeOn(Schedulers.io())
+            .delay(2, TimeUnit.SECONDS)
             .observeOn((Schedulers.computation()))
             .map { num -> SomeObject(colorsGenerator.changeColor(num),
                 nameGenerator.getNameColor(num))}

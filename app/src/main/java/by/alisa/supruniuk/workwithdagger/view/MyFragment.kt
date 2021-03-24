@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import dagger.android.support.DaggerFragment
@@ -39,11 +41,20 @@ class MyFragment : DaggerFragment() {
         val btnHeavyDate by lazy {view.findViewById<Button>(R.id.btnHeavyData)}
         val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
         val tvNameColor: TextView = view.findViewById(R.id.tvNameColor)
+        val pb: ProgressBar = view.findViewById(R.id.pb)
+        pb.visibility = ProgressBar.GONE
 
         btnGenerate.setOnClickListener {
-            model.getObject().subscribe(){
-                        onNext -> myView.setBackgroundColor(onNext.colorNum)
-                        tvNameColor.text = onNext.colorName }
+
+            pb.visibility = ProgressBar.VISIBLE
+
+            model.getObject().subscribe() {
+                if (it != null) {
+                    pb.visibility = ProgressBar.GONE
+                    myView.setBackgroundColor(it.colorNum)
+                    tvNameColor.text = it.colorName
+                }
+            }
         }
 
         btnHeavyDate.setOnClickListener {

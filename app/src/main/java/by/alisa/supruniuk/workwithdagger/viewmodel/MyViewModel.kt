@@ -21,7 +21,6 @@ class MyViewModel @Inject constructor (private val colorsGenerator: ColorsGenera
 
     fun getObject(): Observable<SomeObject> {
         return observable.filter{ x -> x != 4}
-            .retry(3)
             .subscribeOn(Schedulers.io())
             .delay(2, TimeUnit.SECONDS)
             .observeOn((Schedulers.computation()))

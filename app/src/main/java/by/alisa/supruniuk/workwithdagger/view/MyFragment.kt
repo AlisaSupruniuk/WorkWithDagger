@@ -14,6 +14,8 @@ import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
+import java.util.concurrent.TimeUnit
+import kotlin.time.toDuration
 
 class MyFragment : DaggerFragment() {
 

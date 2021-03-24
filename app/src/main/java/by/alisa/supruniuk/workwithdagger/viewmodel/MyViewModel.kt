@@ -9,6 +9,8 @@ import by.alisa.supruniuk.workwithdagger.data.SomeObject
 import dagger.Lazy
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.lang.Exception
+import java.lang.RuntimeException
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -17,10 +19,14 @@ class MyViewModel @Inject constructor (private val colorsGenerator: ColorsGenera
                                        private val nameGenerator: NameGenerator): ViewModel() {
 
     private val observable: Observable<Int> = Observable.create {
-        it.onNext((1..5).shuffled().first()) }
+        o -> o.onNext((1..5).shuffled().first())
+        o.onComplete()}
 
     fun getObject(): Observable<SomeObject> {
-        return observable.filter{ x -> x != 4}
+
+        return observable
+            .filter{ x -> x != 4}
+            .switchIfEmpty(Observable.error(Exception("Oops...")))
             .subscribeOn(Schedulers.io())
             .delay(2, TimeUnit.SECONDS)
             .observeOn((Schedulers.computation()))

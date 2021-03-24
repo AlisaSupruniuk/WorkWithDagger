@@ -50,15 +50,20 @@ class MyFragment : DaggerFragment() {
 
             pb.visibility = ProgressBar.VISIBLE
 
-            model.getObject().subscribe() {
-                if (it != null) {
+            model.getObject().subscribe(
+                { onNext ->
                     pb.visibility = ProgressBar.GONE
-                    myView.setBackgroundColor(it.colorNum)
-                    tvNameColor.text = it.colorName
-                }
-            }
-        }
+                    myView.setBackgroundColor(onNext.colorNum)
+                    tvNameColor.text = onNext.colorName
+                },
+                {
+                    pb.visibility = ProgressBar.GONE
+                    tvNameColor.text = "Oops.."
+                },
+                {
 
+                })
+        }
         btnHeavyDate.setOnClickListener {
             tvHeavyData.text = model.getData().toString()
         }

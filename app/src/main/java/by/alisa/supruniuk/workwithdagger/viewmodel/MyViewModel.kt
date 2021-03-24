@@ -25,10 +25,10 @@ class MyViewModel @Inject constructor (private val colorsGenerator: ColorsGenera
     fun getObject(): Observable<SomeObject> {
 
         return observable
+            .delay(2, TimeUnit.SECONDS)
             .filter{ x -> x != 4}
             .switchIfEmpty(Observable.error(Exception("Oops...")))
             .subscribeOn(Schedulers.io())
-            .delay(2, TimeUnit.SECONDS)
             .observeOn((Schedulers.computation()))
             .map { num -> SomeObject(colorsGenerator.changeColor(num),
                 nameGenerator.getNameColor(num))}

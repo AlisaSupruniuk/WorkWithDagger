@@ -14,7 +14,6 @@ import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.databinding.FragmentMyBinding
 import by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView
-import kotlinx.android.synthetic.main.fragment_my.*
 
 class MyFragment : DaggerFragment(R.layout.fragment_my) {
 
@@ -43,28 +42,28 @@ class MyFragment : DaggerFragment(R.layout.fragment_my) {
 
         val btnHeavyDate by lazy {view.findViewById<Button>(R.id.btnHeavyData)}
 
-        pb.visibility = ProgressBar.GONE
+        viewBinding.pb.visibility = ProgressBar.GONE
 
-        btnGenerate.setOnClickListener {
+        viewBinding.btnGenerate.setOnClickListener {
 
-            pb.visibility = ProgressBar.VISIBLE
+            viewBinding.pb.visibility = ProgressBar.VISIBLE
 
             model.getObject().subscribe(
                 { onNext ->
-                    pb.visibility = ProgressBar.GONE
+                    viewBinding.pb.visibility = ProgressBar.GONE
                     MyCustomView.colorNum = onNext.colorNum
                     MyCustomView.colorName = onNext.colorName
                 },
                 {
-                    pb.visibility = ProgressBar.GONE
-                    tvNameColor.text = "Oops.."
+                    viewBinding.pb.visibility = ProgressBar.GONE
+                    MyCustomView.colorName = "Oops.."
                 },
                 {
 
                 })
         }
         btnHeavyDate.setOnClickListener {
-            tvHeavyData.text = model.getData().toString()
+            viewBinding.tvHeavyData.text = model.getData().toString()
         }
 
         return view

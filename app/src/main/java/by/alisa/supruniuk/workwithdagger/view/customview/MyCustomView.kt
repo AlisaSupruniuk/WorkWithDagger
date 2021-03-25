@@ -1,15 +1,15 @@
 package by.alisa.supruniuk.workwithdagger.view.customview
 
 import android.content.Context
-import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Build
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.RequiresApi
 import by.alisa.supruniuk.workwithdagger.R
-import kotlinx.android.synthetic.main.fragment_my.view.*
+import kotlinx.android.synthetic.main.my_custom_view.view.*
 
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -19,8 +19,9 @@ class MyCustomView @JvmOverloads constructor(context: Context,
                                              defStyleRes: Int = 0):
                 FrameLayout(context, attrs, defStyle, defStyleRes) {
 
-    init {
+    var view: View = LayoutInflater.from(context).inflate(R.layout.my_custom_view, this, true)
 
+    init {
         attrs?.let {
             val typedArray = context.obtainStyledAttributes(it, R.styleable.MyCustomView, 0, 0)
 
@@ -32,7 +33,12 @@ class MyCustomView @JvmOverloads constructor(context: Context,
     }
 
     companion object{
-        var colorName: String = "Hello"
+        var colorName: String
+            get() {
+                TODO()
+            }
+            set(value) {
+            }
         var colorNum: Int = Color.BLACK
     }
 

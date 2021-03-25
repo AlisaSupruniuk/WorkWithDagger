@@ -11,18 +11,10 @@
 
 
     <by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView
-        android:id="@+id/myView"
+        android:id="@+id/myCustomView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:background="@color/black" >
-        <TextView
-            android:id="@+id/tvNameColor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/purple"/>
+        android:layout_marginTop="10dp">
 
     </by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView>
 

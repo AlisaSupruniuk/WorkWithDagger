@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    xmlns:custom="http://schemas.android.com/apk/res/by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView"
+    tools:ignore="ResAuto" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myView"
+        custom:backgroundColor="@color/black" />
+
+
+    <TextView
+        android:id="@+id/tvNameColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        custom:textColor="@color/purple"/>
+
+</FrameLayout>

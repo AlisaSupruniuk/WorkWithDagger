@@ -1,11 +1,13 @@
-package by.alisa.supruniuk.workwithdagger.data
+package by.alisa.supruniuk.workwithdagger.ui.fragment_one
 
 import android.content.Context
 import androidx.core.content.ContextCompat
 import by.alisa.supruniuk.workwithdagger.R
+import by.alisa.supruniuk.workwithdagger.data.ColorsGeneratorInterface
 import javax.inject.Inject
 
-class ColorsGeneratorOne @Inject constructor(private val context : Context): ColorsGeneratorInterface {
+class ColorsGeneratorOne @Inject constructor(private val context : Context):
+    ColorsGeneratorInterface {
 
     override fun changeColor(colorNum : Int) :Int {
 

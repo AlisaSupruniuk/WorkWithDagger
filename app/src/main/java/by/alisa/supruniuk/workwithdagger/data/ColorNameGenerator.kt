@@ -2,7 +2,7 @@ package by.alisa.supruniuk.workwithdagger.data
 
 import javax.inject.Inject
 
-class NameGenerator @Inject constructor() {
+class ColorNameGenerator @Inject constructor() {
 
     fun getNameColor(num: Int): String {
 

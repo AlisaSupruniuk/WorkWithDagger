@@ -6,7 +6,6 @@ import java.lang.Exception
 import java.lang.RuntimeException
 import javax.inject.Inject
 import javax.inject.Provider
-import javax.inject.Singleton
 
 class ViewModelFactory @Inject constructor(
     private val creators: Map<Class<out ViewModel>,

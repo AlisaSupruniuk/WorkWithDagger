@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.view.customview
+package by.alisa.supruniuk.workwithdagger.ui.customview
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -17,14 +17,13 @@ import by.alisa.supruniuk.workwithdagger.databinding.MyCustomViewBinding
 class MyCustomView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
-): FrameLayout(context, attrs) {
+) : FrameLayout(context, attrs) {
 
-    private var _viewBinding: MyCustomViewBinding? = null
-    private val viewBinding get() = _viewBinding!!
+    lateinit var viewBinding: MyCustomViewBinding
 
     init {
         attrs?.let {
-            _viewBinding = MyCustomViewBinding.inflate(LayoutInflater.from(context), this, true)
+            viewBinding = MyCustomViewBinding.inflate(LayoutInflater.from(context), this, true)
             val view = viewBinding.root
             val typedArray = context.obtainStyledAttributes(it, R.styleable.MyCustomView, 0, 0)
 
@@ -36,17 +35,17 @@ class MyCustomView @JvmOverloads constructor(
     }
 
 
-        var colorName: String = "Color"
-            set(value) {
-                field = value
-                viewBinding.tvNameColor.text = field
-            }
+    var colorName: String = "Color"
+        set(value) {
+            field = value
+            viewBinding.tvNameColor.text = field
+        }
 
-        var colorNum: Int = Color.BLACK
-            set(value) {
-                field = value
-                viewBinding.myView.setBackgroundColor(field)
-            }
+    var colorNum: Int = Color.BLACK
+        set(value) {
+            field = value
+            viewBinding.myView.setBackgroundColor(field)
+        }
 
 
 }

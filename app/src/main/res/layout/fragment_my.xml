@@ -5,19 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MyFragment"
+    tools:context=".ui.fragment_one.FragmentOne"
     android:orientation="vertical"
     tools:viewBindingIgnore="false">
 
 
-    <by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView
+    <by.alisa.supruniuk.workwithdagger.ui.customview.MyCustomView
         android:id="@+id/myCustomView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center">
 
-    </by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView>
+    </by.alisa.supruniuk.workwithdagger.ui.customview.MyCustomView>
 
     <ProgressBar
         android:id="@+id/pb"

@@ -35,7 +35,7 @@ class MyCustomView @JvmOverloads constructor(
         }
     }
 
-    companion object {
+
         var colorName: String = "Color"
             set(value) {
                 field = value
@@ -47,6 +47,6 @@ class MyCustomView @JvmOverloads constructor(
                 field = value
                 viewBinding.myView.setBackgroundColor(field)
             }
-    }
+
 
 }

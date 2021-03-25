@@ -51,12 +51,12 @@ class MyFragment : DaggerFragment(R.layout.fragment_my) {
             model.getObject().subscribe(
                 { onNext ->
                     viewBinding.pb.visibility = ProgressBar.GONE
-                    MyCustomView.colorNum = onNext.colorNum
-                    MyCustomView.colorName = onNext.colorName
+                    viewBinding.myCustomView.colorNum = onNext.colorNum
+                    viewBinding.myCustomView.colorName = onNext.colorName
                 },
                 {
                     viewBinding.pb.visibility = ProgressBar.GONE
-                    MyCustomView.colorName = "Oops.."
+                    viewBinding.myCustomView.colorName = "Oops.."
                 },
                 {
 

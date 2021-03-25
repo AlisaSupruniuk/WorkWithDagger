@@ -25,8 +25,6 @@ class MyFragment : DaggerFragment(R.layout.fragment_my) {
     lateinit var modelFactory: ViewModelProvider.Factory
     private lateinit var model: MyViewModel
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)

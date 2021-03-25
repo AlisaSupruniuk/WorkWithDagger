@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.ui.fragment_one
+package by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view
 
 import io.reactivex.Observable
 import androidx.lifecycle.ViewModel

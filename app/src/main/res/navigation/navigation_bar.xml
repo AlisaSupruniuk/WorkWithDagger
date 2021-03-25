@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_bar"
+    app:startDestination="@+id/nameFragment">
+
+    <fragment
+        android:id="@+id/squareFragment"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view.FragmentOne"
+        android:label="Square">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/colorNameFragment"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_color_name.FragmentTwo"
+        android:label="Color">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_my_name.FragmentThree"
+        android:label="Name">
+
+    </fragment>
+
+</navigation>

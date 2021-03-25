@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.ui.fragment_one
+package by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view
 
 import android.content.Context
 import androidx.core.content.ContextCompat

@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.ui.fragment_two
+package by.alisa.supruniuk.workwithdagger.ui.fragment_color_name
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,10 +36,15 @@ class FragmentTwo : DaggerFragment(R.layout.fragment_my) {
         viewBinding.pb.visibility = ProgressBar.GONE
 
         viewBinding.btnGenerate.setOnClickListener {
-            model.getColor().subscribeOn(Schedulers.io())
+            viewBinding.pb.visibility = ProgressBar.VISIBLE
+            model.getColorName().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(){
-                    onNext -> viewBinding.myCustomView.setBackgroundColor(onNext)}
+                .subscribe()
+                    {
+                    onNext ->
+                        viewBinding.pb.visibility = ProgressBar.GONE
+                        viewBinding.myCustomView.colorName = onNext
+                    }
         }
         return view
     }

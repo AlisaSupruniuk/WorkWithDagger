@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.ui.fragment_two
+package by.alisa.supruniuk.workwithdagger.ui.fragment_color_name
 
 import android.content.Context
 import androidx.core.content.ContextCompat

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment_three.FragmentThree">
+    tools:context=".ui.fragment_my_name.FragmentThree">
 
     <TextView
         android:id="@+id/tvMyName"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Alisa"
+        android:text="Opps..."
         android:textColor="@color/teal_700"
         android:textSize="30sp"
         android:textStyle="italic" />

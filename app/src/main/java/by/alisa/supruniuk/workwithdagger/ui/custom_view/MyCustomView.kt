@@ -1,4 +1,4 @@
-package by.alisa.supruniuk.workwithdagger.ui.customview
+package by.alisa.supruniuk.workwithdagger.ui.custom_view
 
 import android.annotation.SuppressLint
 import android.content.Context

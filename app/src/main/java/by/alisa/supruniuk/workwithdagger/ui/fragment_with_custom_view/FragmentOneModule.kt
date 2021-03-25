@@ -1,9 +1,7 @@
-package by.alisa.supruniuk.workwithdagger.dagger.modules
+package by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view
 
 import androidx.lifecycle.ViewModel
 import by.alisa.supruniuk.workwithdagger.data.ColorsGeneratorInterface
-import by.alisa.supruniuk.workwithdagger.ui.fragment_one.ColorsGeneratorOne
-import by.alisa.supruniuk.workwithdagger.ui.fragment_one.ViewModelOne
 import by.alisa.supruniuk.workwithdagger.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module

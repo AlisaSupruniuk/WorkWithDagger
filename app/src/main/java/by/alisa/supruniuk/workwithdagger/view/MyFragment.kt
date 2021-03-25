@@ -7,17 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
-import android.widget.TextView
-import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import by.alisa.supruniuk.workwithdagger.viewmodel.MyViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
-import java.util.concurrent.TimeUnit
-import kotlin.time.toDuration
+import by.alisa.supruniuk.workwithdagger.databinding.FragmentMyBinding
+import by.alisa.supruniuk.workwithdagger.view.customview.MyCustomView
+import kotlinx.android.synthetic.main.fragment_my.*
 
-class MyFragment : DaggerFragment() {
+class MyFragment : DaggerFragment(R.layout.fragment_my) {
+
+    private var _viewBinding: FragmentMyBinding? = null
+    private val viewBinding get() = _viewBinding!!
 
     @Inject
     lateinit var modelFactory: ViewModelProvider.Factory
@@ -36,14 +38,13 @@ class MyFragment : DaggerFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        _viewBinding = FragmentMyBinding.inflate(inflater, container, false)
+        val view = viewBinding.root
+
         model = ViewModelProvider(this, modelFactory).get(MyViewModel::class.java)
-        val view : View = inflater.inflate(R.layout.fragment_my, container, false)
-        val btnGenerate: Button = view.findViewById(R.id.btnGenerate)
-        val myView: View = view.findViewById(R.id.myView)
+
         val btnHeavyDate by lazy {view.findViewById<Button>(R.id.btnHeavyData)}
-        val tvHeavyData: TextView = view.findViewById(R.id.tvHeavyData)
-        val tvNameColor: TextView = view.findViewById(R.id.tvNameColor)
-        val pb: ProgressBar = view.findViewById(R.id.pb)
+
         pb.visibility = ProgressBar.GONE
 
         btnGenerate.setOnClickListener {
@@ -53,8 +54,8 @@ class MyFragment : DaggerFragment() {
             model.getObject().subscribe(
                 { onNext ->
                     pb.visibility = ProgressBar.GONE
-                    myView.setBackgroundColor(onNext.colorNum)
-                    tvNameColor.text = onNext.colorName
+                    MyCustomView.colorNum = onNext.colorNum
+                    MyCustomView.colorName = onNext.colorName
                 },
                 {
                     pb.visibility = ProgressBar.GONE
@@ -69,6 +70,11 @@ class MyFragment : DaggerFragment() {
         }
 
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _viewBinding = null
     }
 
 

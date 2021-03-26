@@ -1,6 +1,7 @@
 package by.alisa.supruniuk.workwithdagger.dagger
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -15,6 +16,7 @@ class MyApplication: Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         buildComponent()
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.getDefaultNightMode())
     }
 
 

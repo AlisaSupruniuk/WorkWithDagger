@@ -3,5 +3,7 @@
     <declare-styleable name="MyCustomView">
         <attr name="colorName" format="string"/>
         <attr name="backgroundColor" format="color"/>
+        <attr name="myThemeBackgroundColor" format="color"/>
+        <attr name="myThemeTextColor" format="color"/>
     </declare-styleable>
 </resources>

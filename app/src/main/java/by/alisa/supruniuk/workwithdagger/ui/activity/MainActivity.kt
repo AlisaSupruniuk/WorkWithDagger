@@ -1,7 +1,11 @@
 package by.alisa.supruniuk.workwithdagger.ui.activity
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.databinding.ActivityMainBinding
 import by.alisa.supruniuk.workwithdagger.ui.fragment_color_name.ColorNameFragment
@@ -48,5 +52,27 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
             false
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflate: MenuInflater = menuInflater
+        menuInflater.inflate(R.menu.menu_item, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id: Int = item.getItemId()
+                when (id) {
+            R.id.my_theme -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                return true
+            }
+            R.id.app_theme -> {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

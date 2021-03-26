@@ -6,6 +6,7 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="bottomBindBack">#537875</color>
     <color name="blue">#112EED</color>
     <color name="green">#247E03</color>
     <color name="yellow">#FBDD17</color>
@@ -15,4 +16,6 @@
     <color name="orange">#DC7C15</color>
     <color name="brown">#4E3105</color>
     <color name="gray">#7E7A7A</color>
+    <color name="myThemeBackColor">#8F8261</color>
+    <color name="myThemeTextColor">#F8E096</color>
 </resources>

@@ -6,21 +6,21 @@
 
     <fragment
         android:id="@+id/squareFragment"
-        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view.FragmentOne"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_with_custom_view.CustomViewFragment"
         android:label="Square">
 
     </fragment>
 
     <fragment
         android:id="@+id/colorNameFragment"
-        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_color_name.FragmentTwo"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_color_name.ColorNameFragment"
         android:label="Color">
 
     </fragment>
 
     <fragment
         android:id="@+id/nameFragment"
-        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_my_name.FragmentThree"
+        android:name="by.alisa.supruniuk.workwithdagger.ui.fragment_my_name.UserNameFragment"
         android:label="Name">
 
     </fragment>

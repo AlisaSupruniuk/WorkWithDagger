@@ -7,10 +7,10 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-abstract class FragmentThreeModule {
+abstract class UserNameFragmentModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(ViewModelThree::class)
-    internal abstract fun firstViewModel(viewModel: ViewModelThree): ViewModel
+    @ViewModelKey(ViewModelUserNameFragment::class)
+    internal abstract fun firstViewModel(viewModel: ViewModelUserNameFragment): ViewModel
 }

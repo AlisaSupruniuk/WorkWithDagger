@@ -11,14 +11,14 @@ import by.alisa.supruniuk.workwithdagger.databinding.FragmentThreeBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class FragmentThree : DaggerFragment(R.layout.fragment_three) {
+class UserNameFragment : DaggerFragment(R.layout.fragment_three) {
 
     private var _viewBinding: FragmentThreeBinding? = null
     private val viewBinding get() = _viewBinding!!
 
     @Inject
     lateinit var modelFactory: ViewModelProvider.Factory
-    private lateinit var model: ViewModelThree
+    private lateinit var model: ViewModelUserNameFragment
 
     @SuppressLint("CheckResult")
     override fun onCreateView(
@@ -27,7 +27,7 @@ class FragmentThree : DaggerFragment(R.layout.fragment_three) {
     ): View? {
         _viewBinding = FragmentThreeBinding.inflate(inflater, container, false)
         val view = viewBinding.root
-        model = ViewModelProvider(this, modelFactory).get(ViewModelThree::class.java)
+        model = ViewModelProvider(this, modelFactory).get(ViewModelUserNameFragment::class.java)
         model.getUserName().subscribe(){
                 onNext -> viewBinding.tvMyName.text = onNext
         }

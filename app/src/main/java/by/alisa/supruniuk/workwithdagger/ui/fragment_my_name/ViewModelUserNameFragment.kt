@@ -6,7 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class ViewModelThree @Inject constructor(private val userName: UserName): ViewModel() {
+class ViewModelUserNameFragment @Inject constructor(private val userName: UserName): ViewModel() {
 
     fun getUserName(): Observable<String> {
         return Observable.just(userName.getUserName()).subscribeOn(Schedulers.io())

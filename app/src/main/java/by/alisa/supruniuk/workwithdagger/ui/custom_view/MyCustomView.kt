@@ -24,7 +24,7 @@ class MyCustomView @JvmOverloads constructor(
     init {
         attrs?.let {
             viewBinding = MyCustomViewBinding.inflate(LayoutInflater.from(context), this, true)
-            val view = viewBinding.root
+            viewBinding.root
             val typedArray = context.obtainStyledAttributes(it, R.styleable.MyCustomView, 0, 0)
 
             viewBinding.tvNameColor.text = colorName

@@ -6,7 +6,7 @@ import io.reactivex.Observable
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class ViewModelTwo @Inject constructor(private val nameGenerator: ColorNameGenerator): ViewModel() {
+class ViewModelColorNameFragment @Inject constructor(private val nameGenerator: ColorNameGenerator): ViewModel() {
 
     fun getColorName(): Observable<String> {
 

@@ -8,13 +8,13 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-abstract class FragmentOneModule {
+abstract class CustomViewFragmentModule {
 
     @Binds
     abstract fun provideColorsGeneratorOne(colorsGeneratorOne: ColorsGeneratorOne) : ColorsGeneratorInterface
 
     @Binds
     @IntoMap
-    @ViewModelKey(ViewModelOne::class)
-    internal abstract fun firstViewModel(viewModel: ViewModelOne): ViewModel
+    @ViewModelKey(ViewModelCustomViewFragment::class)
+    internal abstract fun firstViewModel(viewModel: ViewModelCustomViewFragment): ViewModel
 }

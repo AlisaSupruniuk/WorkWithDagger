@@ -12,14 +12,14 @@ import javax.inject.Inject
 import by.alisa.supruniuk.workwithdagger.R
 import by.alisa.supruniuk.workwithdagger.databinding.FragmentMyBinding
 
-class FragmentOne : DaggerFragment(R.layout.fragment_my) {
+class CustomViewFragment : DaggerFragment(R.layout.fragment_my) {
 
     private var _viewBinding: FragmentMyBinding? = null
     private val viewBinding get() = _viewBinding!!
 
     @Inject
     lateinit var modelFactory: ViewModelProvider.Factory
-    private lateinit var model: ViewModelOne
+    private lateinit var model: ViewModelCustomViewFragment
 
     @SuppressLint("FragmentLiveDataObserve")
     override fun onCreateView(
@@ -30,7 +30,7 @@ class FragmentOne : DaggerFragment(R.layout.fragment_my) {
         _viewBinding = FragmentMyBinding.inflate(inflater, container, false)
         val view = viewBinding.root
 
-        model = ViewModelProvider(this, modelFactory).get(ViewModelOne::class.java)
+        model = ViewModelProvider(this, modelFactory).get(ViewModelCustomViewFragment::class.java)
 
         viewBinding.pb.visibility = ProgressBar.GONE
 

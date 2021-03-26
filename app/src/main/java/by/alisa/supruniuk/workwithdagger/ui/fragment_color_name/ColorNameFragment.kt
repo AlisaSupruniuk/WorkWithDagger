@@ -14,21 +14,21 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 
-class FragmentTwo : DaggerFragment(R.layout.fragment_my) {
+class ColorNameFragment : DaggerFragment(R.layout.fragment_my) {
 
     private var _viewBinding: FragmentMyBinding? = null
     private val viewBinding get() = _viewBinding!!
 
     @Inject
     lateinit var modelFactory: ViewModelProvider.Factory
-    private lateinit var model: ViewModelTwo
+    private lateinit var model: ViewModelColorNameFragment
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        model = ViewModelProvider(this, modelFactory).get(ViewModelTwo::class.java)
+        model = ViewModelProvider(this, modelFactory).get(ViewModelColorNameFragment::class.java)
 
         _viewBinding = FragmentMyBinding.inflate(inflater, container, false)
         val view = viewBinding.root

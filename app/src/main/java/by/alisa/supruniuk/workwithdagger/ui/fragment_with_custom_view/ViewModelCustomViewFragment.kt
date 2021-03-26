@@ -12,8 +12,8 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 
-class ViewModelOne @Inject constructor (private val colorsGenerator: ColorsGeneratorInterface,
-                                        private val nameGenerator: ColorNameGenerator): ViewModel() {
+class ViewModelCustomViewFragment @Inject constructor (private val colorsGenerator: ColorsGeneratorInterface,
+                                                       private val nameGenerator: ColorNameGenerator): ViewModel() {
 
     private val observable: Observable<Int> = Observable.create {
         o -> o.onNext((1..5).shuffled().first())

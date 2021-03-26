@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MySwitchStyle" parent = "Widget.AppCompat.CompoundButton.Switch">
+        <item name="thumbTint">@color/selector_my_switch</item>
+    </style>
+</resources>

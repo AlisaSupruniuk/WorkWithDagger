@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Opps..."
-        android:textColor="@color/teal_700"
+        android:textColor="?attr/myThemeTextColor"
         android:textSize="30sp"
         android:textStyle="italic" />
 

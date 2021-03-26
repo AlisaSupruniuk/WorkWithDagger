@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val view = viewBinding.root
         setContentView(view)
 
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.clNavigation, FragmentOne::class.java, null)
+            .commit()
+
         viewBinding.navigation.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.squareFragment -> {

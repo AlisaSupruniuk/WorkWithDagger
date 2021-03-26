@@ -25,19 +25,19 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             when (menuItem.itemId) {
                 R.id.squareFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.navigation, FragmentOne::class.java, null)
+                        .replace(R.id.clNavigation, FragmentOne::class.java, null)
                         .commit()
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.colorNameFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.navigation, FragmentTwo::class.java, null)
+                        .replace(R.id.clNavigation, FragmentTwo::class.java, null)
                         .commit()
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.nameFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.navigation, FragmentThree::class.java, null)
+                        .replace(R.id.clNavigation, FragmentThree::class.java, null)
                         .commit()
                     return@OnNavigationItemSelectedListener true
                 }

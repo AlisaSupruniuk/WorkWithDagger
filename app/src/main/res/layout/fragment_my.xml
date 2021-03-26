@@ -11,10 +11,10 @@
 
     <by.alisa.supruniuk.workwithdagger.ui.custom_view.MyCustomView
         android:id="@+id/myCustomView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="100dp">
 
     </by.alisa.supruniuk.workwithdagger.ui.custom_view.MyCustomView>
 

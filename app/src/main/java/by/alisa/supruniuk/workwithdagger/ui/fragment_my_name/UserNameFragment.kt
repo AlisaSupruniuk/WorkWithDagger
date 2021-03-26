@@ -14,7 +14,7 @@ import javax.inject.Inject
 class UserNameFragment : DaggerFragment(R.layout.fragment_three) {
 
     private var _viewBinding: FragmentThreeBinding? = null
-    private val viewBinding get() = _viewBinding!!
+    private val viewBinding get() = _viewBinding
 
     @Inject
     lateinit var modelFactory: ViewModelProvider.Factory
@@ -25,11 +25,13 @@ class UserNameFragment : DaggerFragment(R.layout.fragment_three) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _viewBinding = FragmentThreeBinding.inflate(inflater, container, false)
-        val view = viewBinding.root
+
         model = ViewModelProvider(this, modelFactory).get(ViewModelUserNameFragment::class.java)
-        model.getUserName().subscribe(){
-                onNext -> viewBinding.tvMyName.text = onNext
+        _viewBinding = FragmentThreeBinding.inflate(inflater, container, false)
+        val view = viewBinding?.root
+        model.getUserName().subscribe() { onNext ->
+
+            viewBinding?.tvMyName?.text = onNext
         }
         return view
     }

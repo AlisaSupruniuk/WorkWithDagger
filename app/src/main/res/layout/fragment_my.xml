@@ -34,8 +34,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="Generate"
-        android:textColor="#191515"
-        app:backgroundTint="#83B2B8" />
+        android:textColor="?attr/myThemeTextColor"
+        app:backgroundTint="?attr/myThemeColorBottomBindBack" />
 
 
 </LinearLayout>

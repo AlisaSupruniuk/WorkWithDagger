@@ -17,12 +17,15 @@
         <item name="myThemeTextColor">@color/myThemeTextColor</item>
         <item name="myThemeBackgroundColor">@color/myThemeBackColor</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="colorPrimary">#9E9E9E</item>
-        <item name="colorPrimaryDark">#616161</item>
-        <item name="colorAccent">#FF9800</item>
-        <item name="colorButtonNormal">@color/bottomBindBack</item>
+        <item name="colorPrimary">?attr/myThemeColorPrimary</item>
+        <item name="colorPrimaryDark">?attr/myThemeColorPrimaryDark</item>
+        <item name="colorAccent">?attr/myThemeColorAccent</item>
+        <item name="myThemeColorBottomBindBack">@color/bottomBindBack</item>
+        <item name="myThemeColorAccent">@color/myThemeColorAccent</item>
+        <item name="myThemeColorPrimary">@color/myThemeColorPrimary</item>
+        <item name="myThemeColorPrimaryDark">@color/myThemeColorPrimaryDark</item>
         <item name="actionBarItemBackground">@color/bottomBindBack</item>
         <item name="android:textColorPrimary">?attr/myThemeTextColor</item>
         <item name="actionMenuTextColor">?attr/myThemeTextColor</item>
-    </style>
+     </style>
 </resources>

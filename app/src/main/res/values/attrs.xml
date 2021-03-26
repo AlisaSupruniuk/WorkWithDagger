@@ -5,5 +5,11 @@
         <attr name="backgroundColor" format="color"/>
         <attr name="myThemeBackgroundColor" format="color"/>
         <attr name="myThemeTextColor" format="color"/>
+        <attr name="myThemeBackColor" format="color"/>
+        <attr name="myThemeTextColor2" format="color"/>
+        <attr name="myThemeColorAccent" format="color"/>
+        <attr name="myThemeColorPrimaryDark" format="color"/>
+        <attr name="myThemeColorPrimary" format="color"/>
+        <attr name="myThemeColorBottomBindBack" format="color"/>
     </declare-styleable>
 </resources>

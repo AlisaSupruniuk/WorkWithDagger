@@ -18,4 +18,8 @@
     <color name="gray">#7E7A7A</color>
     <color name="myThemeBackColor">#8F8261</color>
     <color name="myThemeTextColor">#F8E096</color>
+    <color name="myThemeColorAccent">#FF9800</color>
+    <color name="myThemeColorPrimaryDark">#616161</color>
+    <color name="myThemeColorPrimary">#9E9E9E</color>
+
 </resources>
